@@ -31,3 +31,20 @@ function sumDigits(n) {
 
   return sum;
 }
+
+// цикл в цикле
+
+function addDigits(n) {
+  while (n >= 10) {
+    let tmpn = n;
+    let sum = 0;
+
+    while (tmpn > 0) {
+      sum = sum + Math.floor(tmpn % 10);
+      tmpn = tmpn / 10;
+      n = sum;
+    }
+  }
+
+  return n;
+}
