@@ -17,3 +17,14 @@ function findSingleNumber(nums) {
     }
   }
 }
+
+// решение через xor
+function singleNumber(arr) {
+  let res = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    res = res ^ arr[i]; // xor - если на входе 2 бита одинаковы, то результат будет равен 0, останется только число без пары
+  }
+
+  return res;
+}

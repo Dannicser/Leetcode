@@ -18,6 +18,26 @@ function mySqrt(x) {
   return end;
 }
 
+// o(log(n))
+function mySqrt(n) {
+  return binarySearch(0, n, n);
+}
+
+function binarySearch(start, end, target) {
+  const middleEl = start + (end - start) / 2; // ?????
+  const sqrt = middleEl * middleEl;
+
+  if (target === Math.floor(sqrt)) {
+    return Math.floor(middleEl);
+  }
+
+  if (sqrt < target) {
+    return binarySearch(middleEl + 1, end, target);
+  } else {
+    return binarySearch(start, middleEl - 1, target);
+  }
+}
+
 //o(sqrt(n))
 function mySqrt(x) {
   if (x === 1) {
@@ -34,5 +54,3 @@ function mySqrt(x) {
     }
   }
 }
-
-console.log(mySqrt(16));
