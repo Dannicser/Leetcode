@@ -5,7 +5,7 @@ function isPowerOfTwo(n) {
     return false;
   }
 
-  const dec = n.toString(2);
+  const dec = n.toString(2); // если в двоичном представлении числа есть одна 1, то это число имеет степень двойки
 
   const obj = {};
 
@@ -18,4 +18,17 @@ function isPowerOfTwo(n) {
   }
 
   return true;
+}
+
+// recursion
+function isPowerOfTwo(n) {
+  if (n === 1) {
+    return true;
+  }
+
+  if (n < 1) {
+    return false;
+  }
+
+  return isPowerOfTwo(n / 2);
 }
