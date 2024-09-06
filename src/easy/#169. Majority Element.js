@@ -44,3 +44,22 @@ function majoritiryElem(arr) {
 
   return res;
 }
+
+// алгоритм с сортировкой
+function majorityElement(arr) {
+  arr.sort((a, b) => a - b);
+
+  let max = 0;
+  let currentMax = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i + 1]) {
+      currentMax++;
+    } else if (currentMax > max) {
+      max = currentMax;
+      currentMax = 0;
+    }
+  }
+
+  return arr[max];
+}

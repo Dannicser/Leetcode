@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/summary-ranges/description/
 
+// два указателя
 function summaryRanges(arr) {
   const res = [];
 
@@ -25,4 +26,21 @@ function concat(arr, l, r) {
   }
 
   return `${arr[l]}->${arr[r]}`;
+}
+
+// с одной переменной
+function summaryRanges(arr) {
+  const res = [];
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] + 1 !== arr[i + 1]) {
+      count > 0 ? res.push(`${arr[i] - count}->${arr[i]}`) : res.push(`${arr[i]}`);
+      count = 0;
+    } else {
+      count++;
+    }
+  }
+
+  return res;
 }
