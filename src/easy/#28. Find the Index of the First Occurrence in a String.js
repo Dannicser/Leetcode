@@ -9,3 +9,7 @@ function findIndex(haystack, needle) {
 
   return -1;
 }
+
+function findIndex(haystack, needle) {
+  return haystack.indexOf(needle);
+}
