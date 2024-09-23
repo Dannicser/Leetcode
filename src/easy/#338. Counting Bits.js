@@ -22,3 +22,29 @@ function count(s) {
 
   return count;
 }
+
+// -------------------------пример решение с побитовым оператором-------------------------
+
+function countBits(n) {
+  const res = [];
+
+  while (n >= 0) {
+    let counter = 0;
+
+    let tmpn = n;
+
+    while (tmpn > 0) {
+      if (tmpn % 2 === 1) {
+        counter++;
+      }
+
+      tmpn = tmpn >> 1;
+    }
+
+    res.unshift(counter); // можно заменить на push и reverse, сильно увеличит произоводительность
+
+    n--;
+  }
+
+  return res;
+}
