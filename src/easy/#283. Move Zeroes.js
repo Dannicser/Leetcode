@@ -6,9 +6,11 @@ function moveZeroes(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[right] !== 0) {
-      let old = arr[right];
-      arr[right] = arr[left];
-      arr[left] = old;
+      [arr[l], arr[r]] = [arr[r], arr[l]]; // короче
+
+      // let old = arr[right];
+      // arr[right] = arr[left];
+      // arr[left] = old;
       left++;
     }
 
