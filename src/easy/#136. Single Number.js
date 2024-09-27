@@ -18,6 +18,21 @@ function findSingleNumber(nums) {
   }
 }
 
+// с одним проходом
+function find(arr) {
+  const store = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    if (store[arr[i]]) {
+      delete store[arr[i]];
+    } else {
+      store[arr[i]] = 1;
+    }
+  }
+
+  return Number(Object.keys(store)[0]);
+}
+
 // решение через xor
 function singleNumber(arr) {
   let res = 0;
