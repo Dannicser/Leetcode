@@ -13,3 +13,13 @@ function searchInsert(arr, n) {
     }
   }
 }
+
+function searchInsert() {
+  for (let i = 0; i < arr.length; i++) {
+    if (n <= arr[i]) {
+      return i;
+    }
+  }
+
+  return arr.length;
+}
