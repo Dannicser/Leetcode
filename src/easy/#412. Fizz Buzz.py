@@ -12,3 +12,17 @@ def fizzBuzz(n):
         return fizzBuzz(n-1) + ['Buzz']
     else:
         return fizzBuzz(n-1) + [str(n)]
+
+
+def fizzBuzz(n):
+    l = [0, 1]
+    i = 0
+
+    if n < 2:
+        return l[n]
+
+    while i < n-1:
+        sum = l[0]+l[1]
+        l.pop(0)
+        l.append(sum)
+        i = i + 1
